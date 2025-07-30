@@ -38,7 +38,7 @@ A Django-based web application that allows users to register, upload resumes, an
 
 &nbsp;  ```bash
 
-&nbsp;  git clone https://github.com/Nikibhole/Resume\_Management\_System.git
+&nbsp;  git clone https://github.com/Nikibhole/Resume\\\_Management\_System.git
 
 &nbsp;  cd Resume\_Management\_System
 
