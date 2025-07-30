@@ -1,0 +1,87 @@
+:root {
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --highlight: #e0b3ff;
+  --text-color: #f5f5f5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: none;
+  color: var(--text-color);
+}
+
+.login-section {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Background Image */
+.bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4) blur(4px);
+  z-index: 1;
+}
+
+/* Transparent Glass Form */
+.login-glass-form {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  width: 100%;
+  padding: 30px;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.1); /* fully transparent feel */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings and labels */
+.login-glass-form h3,
+.login-glass-form p,
+.login-glass-form label,
+.login-glass-form span {
+  color: #ffffff;
+}
+
+/* Inputs */
+.login-glass-form .form-control {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-glass-form .form-control::placeholder {
+  color: #ddd;
+}
+
+/* Buttons */
+.btn-outline-primary {
+  border-color: var(--highlight);
+  color: var(--highlight);
+}
+.btn-outline-primary:hover {
+  background-color: var(--highlight);
+  color: #1b0032;
+}
+
+/* Register Link */
+.login-glass-form a {
+  color: var(--highlight);
+  text-decoration: none;
+}
+.login-glass-form a:hover {
+  text-decoration: underline;
+}

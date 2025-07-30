@@ -1,0 +1,32 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home1.css' %}">
+
+<div class="home-banner position-relative">
+  <img src="{% static 'imgs/job.jpg' %}" class="bg-image" alt="Background">
+  <div class="overlay-content text-center text-white">
+    <h1><strong>Your Dream</strong><br>Job is Waiting</h1>
+    <p>Find your perfect match today</p>
+    <a href="{% url 'jobs' %}" class="btn btn-success mt-3">Search Jobs</a>
+  </div>
+</div>
+
+<div class="container mt-5 fade-in">
+  <h2 class="text-center mb-4">🔍 Quick Job Search</h2>
+  <form method="GET" action="{% url 'home' %}" class="row g-3 justify-content-center">
+    <div class="col-md-3">
+      <input type="text" name="keyword" class="form-control" placeholder="Keyword">
+    </div>
+    <div class="col-md-3">
+      <input type="text" name="category" class="form-control" placeholder="Category">
+    </div>
+    <div class="col-md-3">
+      <input type="text" name="location" class="form-control" placeholder="Location">
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Search</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

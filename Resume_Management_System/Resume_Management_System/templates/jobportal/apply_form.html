@@ -1,0 +1,42 @@
+{% extends "jobportal/index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/apply_form.css' %}">
+
+
+<div class="gradient-bg">
+  <div class="glass-form">
+    <h3 class="text-center mb-4">Apply for {{ job.title }}</h3>
+
+    <form method="POST" enctype="multipart/form-data" id="applyForm">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="full_name" class="form-label">Full Name *</label>
+        <input type="text" name="full_name" id="full_name" required class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email *</label>
+        <input type="email" name="email" id="email" required class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="resume" class="form-label">Upload Resume (PDF, DOC, DOCX, max 2MB) *</label>
+        <input type="file" name="resume" id="resume" class="form-control" accept=".pdf,.doc,.docx" required>
+        <small id="file-error" class="text-danger mt-1 d-block"></small>
+        <small id="file-name" class="text-muted mt-1 d-block"></small>
+      </div>
+
+      <div class="mb-4" id="preview-box" style="display:none;">
+        <label class="form-label">PDF Preview:</label>
+        <embed id="pdf-preview" type="application/pdf" width="100%" height="400px" />
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-success w-50">Submit Application</button>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="{% static 'js/apply_form.js' %}" defer></script>
+{% endblock %}

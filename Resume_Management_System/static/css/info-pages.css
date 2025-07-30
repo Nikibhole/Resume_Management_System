@@ -1,0 +1,75 @@
+/* === Background and Font === */
+body {
+  background: linear-gradient(to right, #f5f7fa, #e0f7fa);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Gradient Background === */
+.gradient-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Glass Form === */
+.glass-form {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* === Heading === */
+h2 {
+  font-size: 1.8rem;
+  color: #0077b6;
+}
+
+/* === Table === */
+.table th {
+  background-color: #00bcd4;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e0f7fa;
+}
+
+/* === Alert Box === */
+.alert-info {
+  background-color: #d9f6ff;
+  color: #004e64;
+  border-left: 5px solid #00bcd4;
+  font-weight: 500;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+/* === Vertical Centering Fix === */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-wrapper {
+  min-height: calc(100vh - 120px); /* Adjust based on your header+footer height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}

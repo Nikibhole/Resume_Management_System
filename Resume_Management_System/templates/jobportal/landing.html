@@ -1,0 +1,16 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+
+<div class="landing-hero d-flex align-items-center justify-content-center text-white text-center">
+  <div class="landing-card p-5 rounded">
+    <h1 class="display-4 fw-bold">Welcome to Job Hunter</h1>
+    <p class="lead">Connecting top talent with great opportunities.</p>
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-4">
+      <a href="{% url 'home' %}" class="btn btn-light fw-semibold px-4 py-2">I'm a Job Seeker</a>
+      <a href="{% url 'home3' %}" class="btn btn-outline-light fw-semibold px-4 py-2">I'm a Recruiter</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

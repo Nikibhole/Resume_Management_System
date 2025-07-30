@@ -1,0 +1,138 @@
+/* === Background Styling === */
+body {
+  background-color: #f5f7fa;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #f0f4f8, #ffffff);
+  z-index: -1;
+  animation: fadebg 10s infinite alternate;
+}
+
+@keyframes fadebg {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(6deg); }
+}
+
+/* === Container === */
+.container.mt-5 {
+  background-color: #ffffffee;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.06);
+}
+
+/* === Job Cards === */
+.card {
+  position: relative;
+  background: #ffffffdd;
+  border: none;
+  border-radius: 15px;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to top left, rgba(0, 242, 255, 0.08), rgba(56, 189, 248, 0.08));
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* === Card Texts === */
+.card-title {
+  color: #0077b6;
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.card-text {
+  color: #555;
+  z-index: 1;
+  position: relative;
+}
+
+/* === Apply Button === */
+.btn-primary {
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+  padding: 8px 25px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: 0.3s ease;
+  border-radius: 8px;
+}
+
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: width 0.4s ease-in-out;
+  z-index: 0;
+}
+
+.btn-primary:hover::after {
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #0288d1;
+  color: #fff;
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+/* === Entry Animation === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Badge / Tag (optional in HTML) === */
+.badge {
+  font-size: 0.75rem;
+  padding: 0.35em 0.6em;
+  border-radius: 0.4rem;
+  background-color: #e0f7fa;
+  color: #007f96;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: inline-block;
+}

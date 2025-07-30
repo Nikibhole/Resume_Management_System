@@ -1,0 +1,63 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/faq.css' %}">
+
+<div class="container my-5">
+  <h2 class="text-center mb-4"><i class="fas fa-question-circle"></i> Help & Frequently Asked Questions</h2>
+
+  <div class="accordion" id="faqAccordion">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+          <i class="fas fa-user-plus me-2"></i> How do I register for an account?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Click on the “Register” button in the top navigation bar and fill in your details. After successful registration, you can log in and access your dashboard.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+          <i class="fas fa-briefcase me-2"></i> How can I apply for a job?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Go to the "Jobs" section, find a job you're interested in, and click the "Apply" button. Make sure you're logged in and your profile is updated.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+          <i class="fas fa-user-circle me-2"></i> How do I update my profile?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Navigate to the “My Profile” section from the navigation bar and fill in or edit your career preferences, skills, education, etc.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+          <i class="fas fa-file-alt me-2"></i> Can I upload my resume?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes, in the “My Profile” section you can upload your resume in PDF or DOC format. Recruiters will view it during shortlisting.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

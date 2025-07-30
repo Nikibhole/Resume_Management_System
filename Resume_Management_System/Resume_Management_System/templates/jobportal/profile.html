@@ -1,0 +1,83 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+<div class="gradient-bg py-5">
+    <div class="container">
+        <div class="glass-form p-4 rounded-4 shadow">
+            <h2 class="text-center mb-4">📝 My Profile</h2>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="full_name">Full Name</label>
+                        <input type="text" name="full_name" class="form-control" placeholder="Enter your name" value="{{ request.user.first_name }}">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter your email" value="{{ request.user.email }}">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="job_type">Preferred Job Type</label>
+                        <input type="text" name="job_type" class="form-control" placeholder="Full-time / Part-time / Internship" value="{{ profile.job_type }}">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="availability">Availability</label>
+                        <input type="text" name="availability" class="form-control" placeholder="Immediate / 15 Days / 1 Month" value="{{ profile.availability }}">
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label for="preferred_location">Preferred Location</label>
+                        <input type="text" name="preferred_location" class="form-control" value="{{ profile.preferred_location }}">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="education">Education</label>
+                        <input type="text" name="education" class="form-control" value="{{ profile.education }}">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label for="profile_summary">Profile Summary</label>
+                        <textarea name="profile_summary" class="form-control" rows="3" placeholder="Brief summary about your experience and goals">{{ profile.profile_summary }}</textarea>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label for="skills">Key Skills</label>
+                        <textarea name="skills" class="form-control" rows="2" placeholder="E.g., Python, Django, MySQL">{{ profile.skills }}</textarea>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label for="languages">Languages Known</label>
+                        <input type="text" name="languages" class="form-control" value="{{ profile.languages }}">
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label for="internships">Internships</label>
+                        <textarea name="internships" class="form-control" rows="2">{{ profile.internships }}</textarea>
+                    </div>
+
+                    <div class="col-12 mb-3">
+                        <label for="accomplishments">Accomplishments</label>
+                        <textarea name="accomplishments" class="form-control" rows="2">{{ profile.accomplishments }}</textarea>
+                    </div>
+
+                    <div class="col-12 mb-4">
+                        <label for="resume">Upload Resume</label>
+                        {% if profile.resume %}
+                            <p>Current: <a href="{{ profile.resume.url }}" target="_blank">{{ profile.resume.name }}</a></p>
+                        {% endif %}
+                        <input type="file" name="resume" class="form-control">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-5">💾 Save Profile</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

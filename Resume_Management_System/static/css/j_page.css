@@ -1,0 +1,31 @@
+/* Top-left admin sidebar logo (main logo) */
+.brand-link img,
+#site-logo {
+    width: 48px !important;
+    height: 48px !important;
+    object-fit: cover !important;
+    border-radius: 30% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    padding: 4px;
+    background-color: white; /* optional: adds clean white circle */
+    box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+/* Logo text next to image */
+.brand-link .brand-text {
+    font-size: 1.1rem !important;
+    font-weight: 600;
+    line-height: 48px;
+    margin-left: 10px;
+}
+
+/* Sidebar collapsed view logo size */
+.sidebar-mini .brand-link img,
+.sidebar-collapse .brand-link img {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
+    margin: 0 auto;
+}

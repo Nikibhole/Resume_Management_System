@@ -1,0 +1,63 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home2.css' %}">
+
+<div class="hero-section d-flex align-items-center justify-content-center text-white text-center">
+  <div class="glass-card p-5 rounded">
+    <h1 class="display-4 fw-bold">Find Your Dream Job</h1>
+    <p class="lead">Search, apply, and manage your career with ease.</p>
+    <a href="{% url 'jobs' %}" class="btn btn-light mt-3 px-4 py-2 fw-semibold">Explore Jobs</a>
+  </div>
+</div>
+
+<section class="features-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">What You Can Do</h2>
+      <p class="text-muted">Everything you need in one place to manage your job journey.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <a href="{% url 'register' %}" class="text-decoration-none text-dark">
+          <div class="feature-box text-center p-4 shadow rounded h-100">
+            <i class="fas fa-user-plus fa-2x text-primary mb-3"></i>
+            <h6>Register & Create Profile</h6>
+            <p class="small">Start by creating your account and personal profile.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-3">
+        <a href="{% url 'profile-page' %}" class="text-decoration-none text-dark">
+          <div class="feature-box text-center p-4 shadow rounded h-100">
+            <i class="fas fa-id-badge fa-2x text-primary mb-3"></i>
+            <h6>Edit Your Profile</h6>
+            <p class="small">Update your details, skills, and preferences.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-3">
+        <a href="{% url 'jobs' %}" class="text-decoration-none text-dark">
+          <div class="feature-box text-center p-4 shadow rounded h-100">
+            <i class="fas fa-briefcase fa-2x text-primary mb-3"></i>
+            <h6>Apply to Jobs</h6>
+            <p class="small">Use filters to find jobs and submit your resume.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-3">
+        <a href="{% url 'my_applications' %}" class="text-decoration-none text-dark">
+          <div class="feature-box text-center p-4 shadow rounded h-100">
+            <i class="fas fa-tasks fa-2x text-primary mb-3"></i>
+            <h6>Track Applications</h6>
+            <p class="small">Check status of your job applications anytime.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

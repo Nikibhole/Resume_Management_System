@@ -1,0 +1,57 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<div class="home-banner position-relative">
+    <img src="{% static 'imgs/background.jpg' %}" class="bg-image" alt="Background">
+    <div class="overlay-content text-center text-white">
+        <h1><strong>Your Dream</strong><br>Job is Waiting</h1>
+
+        <div class="search-box mt-4">
+            <form method="get" action="">
+                <div class="form-row d-flex flex-wrap justify-content-center gap-2">
+                    <input type="text" name="keyword" placeholder="eg. Web Developer" value="{{ request.GET.keyword }}" class="form-control form-control-sm" style="max-width: 250px;">
+                    <select name="category" class="form-select form-select-sm" style="max-width: 200px;">
+                        <option value="">-- Select Category --</option>
+                        <option value="python" {% if request.GET.category == "python" %}selected{% endif %}>Python Developer</option>
+                        <option value="MySQL" {% if request.GET.category == "MySQL" %}selected{% endif %}>SQL Developer</option>
+                        <option value="frontend" {% if request.GET.category == "frontend" %}selected{% endif %}>Frontend Developer</option>
+                        <option value="django" {% if request.GET.category == "django" %}selected{% endif %}>Django Developer</option>
+                    </select>
+                    <select name="location" class="form-select form-select-sm" style="max-width: 200px;">
+                        <option value="">-- Select Location --</option>
+                        <option value="Pune, Maharashtra" {% if request.GET.location == "Pune, Maharashtra" %}selected{% endif %}>Pune</option>
+                        <option value="Mumbai, Maharashtra" {% if request.GET.location == "Mumbai, Maharashtra" %}selected{% endif %}>Mumbai</option>
+                        <option value="Nagpur, Maharashtra" {% if request.GET.location == "Nagpur, Maharashtra" %}selected{% endif %}>Nagpur</option>
+                    </select>
+                    <button type="submit" class="btn btn-sm btn-primary px-4">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if show_results %}
+<div class="container mt-5">
+    {% if jobs.exists %}
+        <h4>Search Results</h4>
+        <div class="list-group">
+            {% for job in jobs %}
+                <div class="list-group-item d-flex justify-content-between align-items-center">
+                    <div><strong>{{ job.title }}</strong> - {{ job.location }}</div>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'apply' job.id %}" class="btn btn-sm btn-primary">Apply</a>
+                    {% else %}
+                        <a href="{% url 'login' %}?next={% url 'apply' job.id %}" class="btn btn-sm btn-primary">Apply</a>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No jobs found matching your criteria.</p>
+    {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}

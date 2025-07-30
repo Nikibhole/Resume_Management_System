@@ -1,0 +1,63 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home3.css' %}">
+
+<div class="hero-section d-flex align-items-center justify-content-center text-white text-center">
+  <div class="glass-card p-5 rounded">
+    <h1 class="display-4 fw-bold">Hire Smarter, Faster</h1>
+    <p class="lead">Post jobs, review applicants, and find top talent with ease.</p>
+    <a href="{% url 'login' %}" class="btn btn-light mt-3 px-4 py-2 fw-semibold">Start Hiring</a>
+  </div>
+</div>
+
+<section class="features-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">For Recruiters</h2>
+      <p class="text-muted">Tools to make your hiring journey simple and effective.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3">
+        <a href="{% url 'login' %}" class="text-decoration-none text-dark">
+          <div class="feature-box text-center p-4 shadow rounded h-100">
+            <i class="fas fa-clipboard-list fa-2x text-primary mb-3"></i>
+            <h6>Post a Job</h6>
+            <p class="small">Create job openings and attract the right talent.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-3">
+        <a href="{% url 'admin_dashboard' %}" class="text-decoration-none text-dark">
+          <div class="feature-box text-center p-4 shadow rounded h-100">
+            <i class="fas fa-users fa-2x text-primary mb-3"></i>
+            <h6>Review Applicants</h6>
+            <p class="small">Browse applications and take action quickly.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-3">
+        <a href="{% url 'admin_dashboard' %}" class="text-decoration-none text-dark">
+          <div class="feature-box text-center p-4 shadow rounded h-100">
+            <i class="fas fa-check-circle fa-2x text-primary mb-3"></i>
+            <h6>Shortlist or Reject</h6>
+            <p class="small">Change application status and send updates.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-3">
+        <a href="{% url 'contact' %}" class="text-decoration-none text-dark">
+          <div class="feature-box text-center p-4 shadow rounded h-100">
+            <i class="fas fa-headset fa-2x text-primary mb-3"></i>
+            <h6>Support</h6>
+            <p class="small">Need help? Contact our support team anytime.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

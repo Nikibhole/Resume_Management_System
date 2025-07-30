@@ -1,0 +1,50 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<div class="container my-5">
+  <!-- About Section -->
+  <div class="card glass-card shadow p-5 mb-4 fade-in">
+    <h2 class="text-center mb-4">About <span class="brand-highlight">Job Hunter</span></h2>
+    <p><strong>Job Hunter</strong> is a modern job and resume platform designed for students, freshers, and professionals to seamlessly connect with employers.</p>
+    <p>We help simplify your hiring journey with:</p>
+    <ul class="feature-list ps-3">
+      <li>📄 Easy Resume Upload</li>
+      <li>🔍 Smart Job Filtering</li>
+      <li>📊 Live Application Tracking</li>
+      <li>📋 Recruiter/Admin Dashboard Support</li>
+    </ul>
+    <p>No matter where you are in your career, <strong>Job Hunter</strong> helps you take the next step confidently.</p>
+  </div>
+
+  <!-- Vision & Features Section -->
+  <div class="card glass-card shadow p-5 fade-in">
+    <h4 class="mb-3">Our Vision</h4>
+    <p class="mb-4">To be a trusted digital platform where talent meets opportunity—for both freshers and employers.</p>
+
+    <h4 class="mb-3">Why Choose Us?</h4>
+    <ul class="feature-list ps-3">
+      <li>✅ Clean, intuitive interface</li>
+      <li>🔐 Privacy-focused features</li>
+      <li>🚀 Built with a learner-first mindset</li>
+    </ul>
+
+<!--    <h4 class="mb-3">What We've Achieved</h4>-->
+<!--    <ul class="feature-list ps-3">-->
+<!--      <li>📅 <strong>2025 (Q2)</strong> — Platform Launched 🎉</li>-->
+<!--      <li>🧠 Intern-level Project Development</li>-->
+<!--      <li>📈 Focused on Resume + Job Match Simplicity</li>-->
+<!--    </ul>-->
+
+    <div class="text-center mt-4">
+      <a href="{% url 'contact' %}" class="btn btn-primary">
+        Get in Touch <i class="fas fa-arrow-circle-right"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'js/about.js' %}"></script>
+{% endblock %}

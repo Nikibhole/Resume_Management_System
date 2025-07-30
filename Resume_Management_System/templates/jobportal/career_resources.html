@@ -1,0 +1,106 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/career_resources.css' %}">
+
+<div class="container py-5">
+    <h2 class="mb-4 text-center">📚 Career Resources</h2>
+
+    <!-- Career Tips Section -->
+    <div class="row mb-5">
+        {% for tip in tips %}
+        <div class="col-md-4 mb-4">
+            <div class="card p-3 h-100 shadow-sm" style="pointer-events: none;">
+                <div class="d-flex align-items-center mb-2" style="pointer-events: auto;">
+                    <i class="{{ tip.icon }} fa-2x me-3 text-primary"></i>
+                    <h5 class="card-title mb-0">{{ tip.title }}</h5>
+                </div>
+                <button class="btn btn-outline-primary mt-auto" data-bs-toggle="modal" data-bs-target="#tipModal{{ tip.id }}" style="pointer-events: auto;">
+                    View More
+                </button>
+            </div>
+        </div>
+
+        <!-- Tip Modal -->
+        <div class="modal fade" id="tipModal{{ tip.id }}" tabindex="-1" aria-labelledby="tipModalLabel{{ tip.id }}" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content bg-dark text-white">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tipModalLabel{{ tip.id }}">{{ tip.title }}</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {{ tip.content|linebreaks }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- HR Interview Questions Section -->
+    <h4 class="mt-5 mb-3">🧠 Interview HR Questions</h4>
+    <div class="accordion" id="hrQuestionsAccordion">
+        {% for hr in hr_questions %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ hr.id }}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse{{ hr.id }}" aria-expanded="false" aria-controls="collapse{{ hr.id }}">
+                    {{ hr.question }}
+                </button>
+            </h2>
+            <div id="collapse{{ hr.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ hr.id }}"
+                 data-bs-parent="#hrQuestionsAccordion">
+                <div class="accordion-body">
+                    {{ hr.answer|linebreaks }}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-muted">No HR questions available.</div>
+        {% endfor %}
+    </div>
+
+    <!-- Aptitude Papers Section -->
+    <h4 class="mt-5 mb-3">📝 Aptitude Papers</h4>
+    <ul class="list-group list-group-flush">
+        {% for paper in papers %}
+        <li class="list-group-item bg-transparent">
+            <a href="{{ paper.pdf.url }}" class="text-success" download>{{ paper.title }}</a>
+        </li>
+        {% empty %}
+        <li class="text-muted">No aptitude papers uploaded.</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Mock Tests Table -->
+    <h4 class="mt-5 mb-3">📅 Mock Test Schedule</h4>
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for test in tests %}
+                <tr>
+                    <td>{{ test.topic }}</td>
+                    <td>{{ test.date }}</td>
+                    <td>{{ test.time }}</td>
+                    <td>{{ test.duration }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="text-muted">No mock tests scheduled.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

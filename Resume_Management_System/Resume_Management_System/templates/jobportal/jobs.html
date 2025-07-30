@@ -1,0 +1,29 @@
+{% extends 'jobportal/index.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container mt-5">
+  <h2 class="mb-4">Available Job Vacancies</h2>
+
+  {% if jobs %}
+    <div class="row">
+      {% for job in jobs %}
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">{{ job.title }}</h5>
+              <p class="card-text"><strong>Location:</strong> {{ job.location }}</p>
+              <div class="card-text">{{ job.description|safe }}</div>
+
+              <a href="{% url 'apply' job.id %}" class="btn btn-primary">Apply</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No jobs available right now.</p>
+  {% endif %}
+</div>
+{% endblock %}

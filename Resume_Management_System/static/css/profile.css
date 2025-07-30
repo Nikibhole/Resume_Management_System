@@ -1,0 +1,56 @@
+/* profile.css */
+
+.gradient-bg {
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  min-height: 100vh;
+  padding-top: 40px;
+}
+
+.glass-form {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-form h2 {
+  color: #333;
+  font-weight: 700;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  background-color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 2px #80deea;
+  border-color: #4dd0e1;
+}
+
+.btn-glass {
+  background: linear-gradient(to right, #26c6da, #00acc1);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 25px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+  background: linear-gradient(to right, #00acc1, #26c6da);
+  transform: scale(1.05);
+}

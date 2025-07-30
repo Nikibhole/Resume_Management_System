@@ -1,0 +1,94 @@
+/* General Body */
+body {
+  color: #212121;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f7f7f7;
+}
+
+/* Main Headings */
+h2, h4{
+  color: #1a1a1a;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+
+
+/* Card Styling */
+.card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  color: #1a1a1a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+/* Modal Content */
+.modal-content {
+  background: #ffffff;
+  color: #212121;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.modal-header .btn-close {
+  filter: none;
+}
+
+/* Button */
+.btn-outline-light {
+  color: #0d6efd;
+  border-color: #0d6efd;
+  background-color: transparent;
+}
+
+.btn-outline-light:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* Career, Mock & Aptitude Paper Links */
+a.text-warning {
+  color: #0056b3; /* rich blue for better contrast */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a.text-warning:hover {
+  color: #d63384; /* pinkish highlight on hover */
+  text-decoration: underline;
+}
+
+/* Table Styling */
+.table-dark th, .table-dark td {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+
+.table-dark th {
+  background-color: #23272b;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+  h4 {
+    font-size: 1.3rem;
+  }
+}
+.modal-backdrop.show {
+    opacity: 0.8;
+    z-index: 1040;
+}
+
+.modal.show {
+    z-index: 1050;
+}

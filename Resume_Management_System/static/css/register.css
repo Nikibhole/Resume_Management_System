@@ -1,0 +1,115 @@
+/* === Gradient Background === */
+.gradient-bg {
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 15px;
+}
+
+/* === Glass Form Card === */
+.glass-form {
+  width: 100%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+/* === Typography === */
+.form-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-subheading {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* === Form Controls === */
+.form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-control, .form-select {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.3);
+}
+
+/* === Buttons === */
+.btn {
+  border-radius: 25px;
+  padding: 8px 22px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background-color: #26c6da;
+  border-color: #26c6da;
+}
+
+.btn-primary:hover {
+  background-color: #00acc1;
+  border-color: #00acc1;
+}
+
+.btn-secondary {
+  background-color: #cfd8dc;
+  border-color: #cfd8dc;
+  color: #333;
+}
+
+.btn-success {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.btn-success:hover {
+  background-color: #43a047;
+  border-color: #43a047;
+}
+
+/* === Progress Bar === */
+.progress {
+  height: 20px;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+}
+
+.progress-bar {
+  background-color: #26c6da;
+  font-weight: bold;
+}
+
+/* === Step Transitions === */
+.step {
+  animation: fadeInStep 0.4s ease-in-out;
+}
+
+@keyframes fadeInStep {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Fade In Animation for Form === */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1); }
+}
